@@ -124,6 +124,10 @@
     let timeRemaining = 0;
     let timerInterval;
 
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     function formatTime(seconds) {
       const minutes = Math.floor(seconds / 60);
       const remainingSeconds = seconds % 60;
@@ -254,6 +258,8 @@
       } else {
         setTimeout(endGame, 1500);
       }
+
+      scrollToTop();
     }
 
     function endGame() {
@@ -288,6 +294,8 @@
       }
 
       updateLeaderboards();
+
+      scrollToTop();
     }
 
     function updateLeaderboards() {
